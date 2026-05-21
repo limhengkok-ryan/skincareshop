@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+.recommendations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background-color: #fbf9f5; /* surface */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.recommendations-title {
+  font-family: 'Literata', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5A3E2D; /* Earth Text */
+  margin-bottom: 30px;
+}
+
+.recommendation-card {
+  background-color: #ffffff; /* surface-container-lowest */
+  border: 1px solid #d7c1c4; /* outline-variant */
+  border-radius: 1rem; /* rounded-lg */
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 350px;
+}
+
+.recommendation-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.75rem; /* rounded-md */
+}
+
+.recommendation-name {
+  font-family: 'Literata', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1b1c1a; /* on-surface */
+  margin-top: 24px;
+}
+
+.recommendation-price {
+  font-size: 1.2rem;
+  color: #524345; /* on-surface-variant */
+  margin-top: 10px;
+}
+
+.add-to-cart-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #df91a2; /* primary-container */
+  color: #632939; /* on-primary-container */
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #8c4b5a; /* primary */
+  color: #ffffff; /* on-primary */
+}
+
+.home-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #5A3E2D; /* Earth Text */
+  border: 1px solid #5A3E2D; /* Earth Text */
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.home-btn:hover {
+  background-color: #5A3E2D;
+  color: #fbf9f5;
+}

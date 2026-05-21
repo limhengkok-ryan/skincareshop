@@ -1,0 +1,1 @@
+export default function TheScience() { return <div>The Science</div>; }
