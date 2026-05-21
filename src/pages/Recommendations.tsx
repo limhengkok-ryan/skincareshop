@@ -1,4 +1,6 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import "../Recommendations.css";
 
 const productData: { [key: string]: { image: string; price: number } } = {
@@ -11,6 +13,10 @@ const productData: { [key: string]: { image: string; price: number } } = {
 export default function Recommendations() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) return null;
+  const { addToCart } = cartContext;
 
   const answers = JSON.parse(searchParams.get("answers") || "[]");
   let recommendation = "";
@@ -30,6 +36,17 @@ export default function Recommendations() {
 
   const product = recommendation ? productData[recommendation] : null;
 
+  const handleAddToCart = () => {
+    if (product && recommendation) {
+      addToCart({
+        name: recommendation,
+        price: product.price,
+        image: product.image
+      });
+      alert(`${recommendation} added to cart!`);
+    }
+  };
+
   return (
     <div className="recommendations-container">
       <h2 className="recommendations-title">We Recommend</h2>
@@ -38,9 +55,15 @@ export default function Recommendations() {
           <img src={product.image} alt={recommendation} className="recommendation-image" />
           <p className="recommendation-name">{recommendation}</p>
           <p className="recommendation-price">${product.price}</p>
+          <button onClick={handleAddToCart} className="add-to-cart-btn">
+            Add to Cart
+          </button>
         </div>
       )}
-      <button onClick={() => navigate('/')} className="home-btn">Home</button>
+      <div className="recommendations-actions">
+        <button onClick={() => navigate(-1)} className="back-btn">Back</button>
+        <button onClick={() => navigate('/')} className="home-btn">Home</button>
+      </div>
     </div>
   );
 }

@@ -4,58 +4,65 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
-  background-color: #fbf9f5; /* surface */
+  justify-content: center;
+  padding: 20px;
+  background-color: #fbf9f5;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px); /* Subtract header height */
+  box-sizing: border-box;
 }
 
 .recommendations-title {
   font-family: 'Literata', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #5A3E2D; /* Earth Text */
-  margin-bottom: 30px;
+  color: #5A3E2D;
+  margin-bottom: 20px;
+  margin-top: 0;
 }
 
 .recommendation-card {
-  background-color: #ffffff; /* surface-container-lowest */
-  border: 1px solid #d7c1c4; /* outline-variant */
-  border-radius: 1rem; /* rounded-lg */
-  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #d7c1c4;
+  border-radius: 1rem;
+  padding: 20px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  max-width: 350px;
+  max-width: 320px;
+  width: 90%;
 }
 
 .recommendation-image {
   width: 100%;
-  max-width: 250px;
+  max-width: 180px;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 0.75rem; /* rounded-md */
+  border-radius: 0.75rem;
+  margin: 0 auto;
+  display: block;
 }
 
 .recommendation-name {
   font-family: 'Literata', serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #1b1c1a; /* on-surface */
-  margin-top: 24px;
+  color: #1b1c1a;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .recommendation-price {
-  font-size: 1.2rem;
-  color: #524345; /* on-surface-variant */
-  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #524345;
+  margin-top: 5px;
 }
 
 .add-to-cart-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #df91a2; /* primary-container */
-  color: #632939; /* on-primary-container */
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #df91a2;
+  color: #632939;
   font-weight: 600;
   border: none;
   border-radius: 0.5rem;
@@ -64,23 +71,37 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: #8c4b5a; /* primary */
-  color: #ffffff; /* on-primary */
+  background-color: #8c4b5a;
+  color: #ffffff;
 }
 
-.home-btn {
-  margin-top: 30px;
-  padding: 10px 20px;
+.recommendations-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.back-btn, .home-btn {
+  padding: 8px 20px;
   background-color: transparent;
-  color: #5A3E2D; /* Earth Text */
-  border: 1px solid #5A3E2D; /* Earth Text */
+  color: #5A3E2D;
+  border: 1px solid #5A3E2D;
   font-weight: 600;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.home-btn:hover {
+.back-btn:hover, .home-btn:hover {
   background-color: #5A3E2D;
   color: #fbf9f5;
+}
+
+@media (max-height: 700px) {
+  .recommendations-title { font-size: 1.75rem; margin-bottom: 10px; }
+  .recommendation-image { max-width: 140px; }
+  .recommendation-card { padding: 15px; }
+  .recommendation-name { font-size: 1.25rem; margin-top: 10px; }
+  .recommendations-actions { margin-top: 15px; }
 }
