@@ -19,8 +19,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const removeFromCart = (name: string) => {
+    setCart((prevCart) => prevCart.filter((item) => item.name !== name));
+  };
+
+  const updateQuantity = (name: string, quantity: number) => {
+    if (quantity <= 0) {
+      removeFromCart(name);
+      return;
+    }
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.name === name ? { ...item, quantity } : item
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );
