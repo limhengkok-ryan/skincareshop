@@ -4,10 +4,10 @@ import { CartContext } from "../context/CartContext";
 import "../Recommendations.css";
 
 const productData: { [key: string]: { image: string; price: number } } = {
-  "Hydrating Serum": { image: "Image/Hydrating Serum.png", price: 45 },
-  "Acne Control Treatment": { image: "Image/Acne Control Treatment.png", price: 55 },
-  "Soothing Cleanser": { image: "Image/Soothing Cleanser.png", price: 35 },
-  "Anti-Aging Cream": { image: "Image/Anti-Aging Cream.png", price: 65 },
+  "Hydrating Serum": { image: "/Image/Hydrating Serum.png", price: 45 },
+  "Acne Control Treatment": { image: "/Image/Acne Control Treatment.png", price: 55 },
+  "Soothing Cleanser": { image: "/Image/Soothing Cleanser.png", price: 35 },
+  "Anti-Aging Cream": { image: "/Image/Anti-Aging Cream.png", price: 65 },
 };
 
 export default function Recommendations() {
