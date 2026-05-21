@@ -6,9 +6,6 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <div className="header">
-        <img src="/Image/logo.svg" alt="Skincare logo" className="logo" />
-      </div>
       <div className="main-content">
         <div className="text-content">
           <h1 className="title">Find Your Perfect Skincare Match</h1>

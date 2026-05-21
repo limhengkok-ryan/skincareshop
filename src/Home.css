@@ -3,25 +3,11 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Adjust for Layout padding-top */
   text-align: center;
   background-color: #fbf9f5;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow: hidden;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eae8e4;
-  flex-shrink: 0;
-}
-
-.logo {
-  height: 50px;
 }
 
 .main-content {
@@ -40,7 +26,7 @@
 
 .title {
   font-family: 'Literata', serif;
-  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: clamp(10px, 2vh, 20px);
   color: #5A3E2D;
@@ -48,7 +34,7 @@
 }
 
 .subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #5A3E2D;
   margin-bottom: clamp(15px, 4vh, 30px);
   line-height: 1.6;
@@ -56,7 +42,7 @@
 
 .quiz-btn {
   padding: clamp(12px, 2vh, 18px) clamp(24px, 4vw, 36px);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   font-weight: 600;
   background-color: #df91a2;
   color: #632939;
